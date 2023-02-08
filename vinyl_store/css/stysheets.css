@@ -1,0 +1,154 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 5%;
+    background-color: #DD5353;
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+h2 {
+    size: 3rem;
+    line-height: 2;
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 2;
+}
+
+p {
+    line-height: 2;
+}
+
+/* Tittle banner */
+@media (max-width: 1000px) {
+    #tittle {
+        text-align: center;
+    }
+
+}
+
+/* colors sections */
+.red-section {
+    background-color: #DD5353;
+}
+
+.white-section {
+    background-color: #F8EDE3;
+}
+
+.white-text {
+    color: #F8EDE3;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar {
+    background-color: #DD5353;
+    padding: 1% 15%;
+}
+
+.nav-item {
+    padding: 0 2rem;
+    font-weight: lighter;
+}
+
+/* tittle */
+.container-fluid {
+    padding: 5% 15%;
+}
+
+#tittle {
+    text-align: left;
+}
+
+.tittle-text {
+    size: 3.5rem;
+    line-height: 1.5;
+    font-weight: 900;
+}
+
+.tittle-btn {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.tittle-img {
+    width: 100%;
+}
+
+.btn-outline-primary {
+    color: #F8EDE3;
+    border-color: #F8EDE3;
+}
+
+.btn-outline-primary:hover {
+    background-color: #F8EDE3;
+    border-color: #F8EDE3;
+    color: #DD5353;
+}
+
+
+/* Features */
+
+.feature-box {
+    margin: 20px 0;
+}
+
+.f-icon {
+    color: #DD5353;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
+.f-icon:hover {
+    color: #B73E3E;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
+/* Testimonials */
+
+
+.profile-pic {
+    border-radius: 100%;
+    width: 10%;
+    margin: 20px;
+}
+
+/* Pricing */
+
+
+.card .btn {
+    background-color: #B73E3E;
+}
+
+
+/* Call to Action */
+
+#cta .btn {
+    background-color: #F8EDE3;
+    color: #B73E3E;
+}
+
+/* footer*/
+
+.social-icon {
+    margin: 30px 20px;
+}
