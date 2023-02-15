@@ -1,0 +1,35 @@
+body {
+    background-color: #F5EDDC;
+}
+
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 5rem;
+    color: #EB1D36;
+    margin: 0 0;
+
+}
+
+p {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.board p {
+    font-size: 2rem;
+    color: #EB1D36;
+}
+
+.board {
+    text-align: center;
+    min-height: 90vh;
+}
+
+.dice {
+    display: inline-block;
+    margin: 10px 50px;
+}
+
+.footer {
+    min-height: 10vh;
+    text-align: center;
+}
