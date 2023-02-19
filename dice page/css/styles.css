@@ -24,6 +24,18 @@ p {
     min-height: 90vh;
 }
 
+.button-roll {
+    display: block;
+    margin: 20px auto;
+    background-color: #EB1D36;
+    color: #F5EDDC;
+    font-size: 2rem;
+    border-color: #EB1D36;
+    font-family: 'Bebas Neue', cursive;
+    border: none;
+    border-radius: 5px;
+}
+
 .dice {
     display: inline-block;
     margin: 10px 50px;

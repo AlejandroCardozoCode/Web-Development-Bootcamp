@@ -18,9 +18,12 @@ function setWinnerText(dice1, dice2) {
         document.querySelector("h1").innerHTML = "¡It's a Draw!";
     }
 }
+function rollDices() {
+    var dice1 = getRandomNumber();
+    var dice2 = getRandomNumber();
 
-var dice1 = getRandomNumber();
-var dice2 = getRandomNumber();
+    changeDices(dice1, dice2);
+    setWinnerText(dice1, dice2);
+}
 
-changeDices(dice1, dice2);
-setWinnerText(dice1, dice2);
+document.getElementById("button-roll").onclick = rollDices;
