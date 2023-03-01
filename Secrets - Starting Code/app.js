@@ -14,7 +14,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // database
 mongoose.set("strictQuery", false);
-//mongoose.connect("mongodb+srv://dcardozo:Wm9EUHgVh15r65Js@cluster0.kjbkyab.mongodb.net/usersDB?retryWrites=true&w=majority")
 mongoose.connect("mongodb://127.0.0.1:27017/usersDB")
     .catch((err) => console.log(err))
     .then(() => console.log("database connected"));
