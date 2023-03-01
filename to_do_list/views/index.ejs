@@ -1,0 +1,30 @@
+<%- include("header") %>
+
+    <body>
+        <div class="box" id="heading">
+            <h1> Today is a <%= dia %>
+            </h1>
+        </div>
+        <div class="box">
+            <% for (x in items) {%>
+
+                <form action="/delete" method="post">
+                    <div class="item">
+                        <input type="checkbox" name="checkbox" value="<%= items[x] %>" onchange="this.form.submit()">
+                        <p>
+                            <%= items[x] %>
+                        </p>
+
+                    </div>
+                </form>
+                <% } %>
+
+                    <form class="item" action="/" method="post">
+                        <input type="text" name="newInput" placeholder="Place a new task" autocomplete="off">
+                        <button type="submit">+</button>
+                    </form>
+
+        </div>
+    </body>
+
+    <%- include("footer") %>
