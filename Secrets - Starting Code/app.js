@@ -3,7 +3,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const encrypt = require("mongoose-encryption");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 
 const app = express();
 
@@ -25,8 +26,6 @@ const userSchema = new mongoose.Schema({
     pwd: String
 });
 
-userSchema.plugin(encrypt, { secret: process.env.SECRET, encryptedFields: ["pwd"] });
-
 const userModel = mongoose.model("User", userSchema);
 
 app.get("/", function (req, res) {
@@ -43,9 +42,11 @@ app.post("/login", function (req, res) {
 
     userModel.findOne({ user: user })
         .then(function (foundUser) {
-            if (pwd === foundUser.pwd) {
-                res.render("secrets");
-            }
+            bcrypt.compare(pwd, foundUser.pwd, function (err, result) {
+                if (result == true) {
+                    res.render("secrets");
+                }
+            })
         })
         .catch((err) => console.log(err));
 })
@@ -55,19 +56,24 @@ app.get("/register", function (req, res) {
 })
 
 app.post("/register", function (req, res) {
-    let user = new userModel({
-        user: req.body.username,
-        pwd: req.body.password,
-    });
-    console.log(req.body.username);
-    console.log(req.body.password);
-    user.save()
-        .then(function (insertedUser) {
-            res.render("secrets");
-        })
-        .catch(function (err) {
+
+    bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
+        if (err) {
             console.log(err);
+            res.redirect("/");
+        }
+        let user = new userModel({
+            user: req.body.username,
+            pwd: hash,
         });
+        user.save()
+            .then(function (insertedUser) {
+                res.render("secrets");
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    });
 })
 
 app.listen(3000, function () {
